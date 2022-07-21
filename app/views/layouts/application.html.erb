@@ -10,7 +10,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="background-color: black;">
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <h1 class="navbar-brand" style='text-shadow:0 6px 10px rgba(0, 0, 0, 0.2); color:black; font-size:40px; font-weight:bolder; font-family:Edu TAS Beginner;'>RESTAURANTS</h1>
+        <form class="d-flex">
+        <%= link_to 'Home', restaurants_path, class: 'btn btn-outline-dark' %>
+        <%= link_to "add restaurant", new_restaurant_path, class:"btn btn-outline-dark"%>
+        </form>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

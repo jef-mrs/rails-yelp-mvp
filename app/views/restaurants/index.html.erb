@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+      <%# <div class=" d-flex justify-content-between" > %>
+        <% @restaurants.each do |restaurant| %>
+        <div class="col-3">
+          <div class="card" style='margin: 12px 0; box-shadow: 0 12px 10px rgba(255, 255, 255, 0.2);'>
+            <div class="card-body" style='padding: 0 8px; background-color:white; font-family:Edu TAS Beginner;'>
+              <p class="text-center" style="font-size:32px"><%= restaurant.name %></p>
+              <p>Category: <b><%= restaurant.category.capitalize %></b></p>
+              <p>Reviews: <%= restaurant.reviews.count > 0 ? restaurant.reviews.count : '-' %></p>
+            </div>
+            <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-light" %>
+            <%# <%= link_to "Add review", new_restaurant_review_path(restaurant), class: "btn btn-dark" %>
+          </div>
+        </div>
+        <% end %>
+      <%# </div> %>
+      <div class="row">
+      </div>
+  </div>
+</div>
